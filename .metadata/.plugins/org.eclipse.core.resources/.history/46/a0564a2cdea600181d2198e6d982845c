@@ -1,7 +1,0 @@
-package daoImpl;
-
-import dao.LinkManDao;
-
-public class LinkManImpl implements LinkManDao {
-
-}

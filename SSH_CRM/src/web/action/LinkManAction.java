@@ -3,6 +3,7 @@ package web.action;
 import java.util.List;
 
 import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -60,6 +61,16 @@ public class LinkManAction extends ActionSupport implements ModelDriven<LinkMan>
 		//离线条件查询
 		DetachedCriteria detachedCriteria = DetachedCriteria.forClass(LinkMan.class);
 		//设置条件
+		if(linkMan.getLkm_name() != null) {
+			//名称查询
+			detachedCriteria.add(Restrictions.like("lkm_name", "%"+linkMan.getLkm_name()+"%"));
+		}
+		
+		if(linkMan.getLkm_gender() !=null && !"".equals(linkMan.getLkm_gender())){
+			//性别查询
+			detachedCriteria.add(Restrictions.eq("lkm_gender", linkMan.getLkm_gender()));
+		}
+		
 		PageBean<LinkMan> pageBean = linkManService.finAll(detachedCriteria,currentPage,pageSize);
 		//保存到值栈
 		ValueStack valueStack = ActionContext.getContext().getValueStack();

@@ -28,7 +28,7 @@ public class LinkManServiceImpl implements LinkManService {
 		pageBean.setCurrentPage(currentPage);
 		pageBean.setPageSize(pageSize);
 		//总记录数
-		Long totalCount = linkManDao.findCount(detachedCriteria);
+		Integer totalCount = linkManDao.findCount(detachedCriteria);
 		pageBean.setTotalCount(totalCount);
 		//总页数
 		Double num = Math.ceil(totalCount.doubleValue()/pageSize);

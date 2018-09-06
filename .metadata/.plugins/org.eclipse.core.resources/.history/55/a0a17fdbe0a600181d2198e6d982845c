@@ -1,9 +1,0 @@
-package dao;
-
-import org.hibernate.criterion.DetachedCriteria;
-
-public interface LinkManDao  {
-
-	Long findCount(DetachedCriteria detachedCriteria);
-
-}

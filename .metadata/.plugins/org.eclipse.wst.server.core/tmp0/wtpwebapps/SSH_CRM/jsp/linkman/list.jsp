@@ -9,7 +9,7 @@
 <LINK href="css/Style.css" type=text/css rel=stylesheet>
 <LINK href="css/Manage.css" type=text/css rel=stylesheet>
 <script type="text/javascript"
-	src="${pageContext.request.contextPath }/js/jquery-3.3.1.min.js"></script>
+	src="js/jquery-3.3.1.min.js"></script>
 	
 <SCRIPT language=javascript>
 	function to_page(page) {
@@ -67,7 +67,15 @@
 													<TD>联系人名称：</TD>
 													<TD><INPUT class=textbox id=sChannel2
 														style="WIDTH: 80px" maxLength=50 name="lkm_name"></TD>
-
+													<TD>联系人性别：</TD>
+													<TD>
+														<select name="lkm_gender">
+															<option value="">-请选择-</option>
+															<option value="1">男</option>
+															<option value="2">女</option>
+														</select>
+													</TD>
+														
 													<TD><INPUT class=button id=sButton2 type=submit
 														value="筛选 " name=sButton2></TD>
 												</TR>
@@ -129,17 +137,17 @@
 											<DIV
 												style="LINE-HEIGHT: 20px; HEIGHT: 20px; TEXT-ALIGN: right">
 												共[<B><s:property value="totalCount" /></B>]条记录,[<B><s:property
-														value="totalPage" /></B>]页 ,每页显示 
-														
-												<select name="pageSize"onchange="to_page()">
+														value="totalPage" /></B>]页 ,每页显示 <select name="pageSize"
+													onchange="to_page()">
 													<option value="3" <s:if test="pageSize==3">selected</s:if>>3</option>
 													<option value="5" <s:if test="pageSize==5">selected</s:if>>5</option>
-													<option value="10"<s:if test="pageSize==10">selected</s:if>>10</option>
-												</select>条
-												
+													<option value="10"
+														<s:if test="pageSize==10">selected</s:if>>10</option>
+												</select> 条
 												<s:if test="currentPage != 1">
-												[<A href="javascript:to_page(1)">首页</A>]
-												[<A href="javascript:to_page(<s:property value="currentPage-1"/>)">前一页</A>]
+												[<A href="javascript:to_page(<s:property value="1"/>)">首页</A>]
+												[<A
+														href="javascript:to_page(<s:property value="currentPage-1"/>)">前一页</A>]
 												</s:if>
 
 												<s:iterator var="i" begin="1" end="totalPage">
@@ -158,11 +166,8 @@
 												[<A
 														href="javascript:to_page(<s:property value="totalPage"/>)">尾页</A>] 
 												</s:if>
-												
-												到 <input type="text" size="3" id="page" name="currentPage" />页
-												
-												 <input type="button" value="Go" onclick="to_page()" />
-												
+												到 <input type="text" size="3" id="page" name="currentPage" />
+												页 <input type="button" value="Go" onclick="to_page()" />
 											</DIV>
 									</SPAN></TD>
 								</TR>

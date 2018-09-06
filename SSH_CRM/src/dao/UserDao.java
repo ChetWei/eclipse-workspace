@@ -2,8 +2,7 @@ package dao;
 
 import domain.User;
 
-public interface UserDao {
+public interface UserDao extends BaseDao<User> {
 
-	void save(User user);
 	User login(User user);
 }

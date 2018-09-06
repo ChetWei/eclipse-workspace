@@ -35,14 +35,14 @@ public class CustomerServiceImpl implements CustomerService {
 		//封装每页显示记录数
 		pageBean.setPageSize(pageSize);
 		//封装总记录数
-		Long totalCount = customerDao.getCount(detachedCriteria);
+		Integer totalCount = customerDao.findCount(detachedCriteria);
 		pageBean.setTotalCount(totalCount);
 		//封装总页数
 		Double num = Math.ceil(totalCount.doubleValue()/pageSize);
 		pageBean.setTotalPage(num.longValue());
 		//封装每页显示数据的集合
 		Integer begin = (currentPage-1) * pageSize;
-		List list = customerDao.fingByPage(detachedCriteria, begin, pageSize);
+		List list = customerDao.findByPage(detachedCriteria, begin, pageSize);
 		pageBean.setList(list);
 		
 		return pageBean;
@@ -74,7 +74,7 @@ public class CustomerServiceImpl implements CustomerService {
 	//查询所有客户
 	@Override
 	public List<Customer> findAll() {
-		List list = customerDao.finAll();
+		List list = customerDao.findAll();
 		return list;
 	}
 

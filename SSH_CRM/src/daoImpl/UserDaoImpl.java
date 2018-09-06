@@ -7,17 +7,10 @@ import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 import dao.UserDao;
 import domain.User;
 
-public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
+public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao {
 
 	//需要在spring配置SessionFactory注入
 	
-	
-	//用户注册保存用户
-	@Override
-	public void save(User user) {
-		this.getHibernateTemplate().save(user);
-		
-	}
 
 	//用户登录
 	@Override
@@ -31,7 +24,6 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 		User existUser = list.get(0);
 		return existUser;
 	}
-
 	return null;
 	}
 

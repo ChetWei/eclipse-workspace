@@ -27,7 +27,7 @@
 		<many-to-one name="baseDictLevel" fetch="join" class="domain.BaseDict" column="cust_level"/>	
 				
 		<!-- 与联系人的关系映射 -->
-		<set name="linkMans">
+		<set name="linkMans" cascade="delete" inverse="true">  <!-- 级联删除 删除客户，删除联系人;放弃外建维护权,让多的一方自行维护 -->
 			<key column="lkm_cust_id" />
 			<one-to-many class="domain.LinkMan"/>
 		</set>

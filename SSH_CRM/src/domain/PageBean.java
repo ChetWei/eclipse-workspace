@@ -6,7 +6,7 @@ public class PageBean<T> {
 
 	private Integer currentPage;
 	private Integer pageSize;
-	private Long totalCount;
+	private Integer totalCount;
 	private Long totalPage;
 	
 	private List<T> list;
@@ -39,11 +39,11 @@ public class PageBean<T> {
 		this.pageSize = pageSize;
 	}
 
-	public Long getTotalCount() {
+	public Integer getTotalCount() {
 		return totalCount;
 	}
 
-	public void setTotalCount(Long totalCount) {
+	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
 	}
 

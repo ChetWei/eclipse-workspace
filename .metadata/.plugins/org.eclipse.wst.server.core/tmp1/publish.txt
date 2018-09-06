@@ -1,6 +1,0 @@
-#Tomcat publish data
-#Sat Jul 21 00:10:39 CST 2018
-org.eclipse.jst.jee.server\:/binary\:G\:\\eclipse-jee-oxygen-3a-win32-x86_64\\eclipse-workspace\\ssh\\WebContent\\WEB-INF\\lib\\spring-web-4.3.9.RELEASE.jar=G\:\\Tomcat\\apache-tomcat-8.0.52-windows-x64\\apache-tomcat-8.0.52\\webapps\\ssh\\WEB-INF\\lib\\spring-web-4.3.9.RELEASE.jar
-org.eclipse.jst.jee.server\:ssh=G\:\\Tomcat\\apache-tomcat-8.0.52-windows-x64\\apache-tomcat-8.0.52\\webapps\\ssh
-org.eclipse.jst.jee.server\:/binary\:G\:\\eclipse-jee-oxygen-3a-win32-x86_64\\eclipse-workspace\\ssh2NoHibernateConfig\\WebContent\\WEB-INF\\lib\\spring-web-4.3.9.RELEASE.jar=G\:\\Tomcat\\apache-tomcat-8.0.52-windows-x64\\apache-tomcat-8.0.52\\webapps\\ssh2NoHibernateConfig\\WEB-INF\\lib\\spring-web-4.3.9.RELEASE.jar
-org.eclipse.jst.jee.server\:ssh2NoHibernateConfig=G\:\\Tomcat\\apache-tomcat-8.0.52-windows-x64\\apache-tomcat-8.0.52\\webapps\\ssh2NoHibernateConfig
