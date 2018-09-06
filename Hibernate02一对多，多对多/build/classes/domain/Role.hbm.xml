@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="domain.Role" table="sys_role">
+		<id name="role_id" column="role_id">
+			<generator class="native"/>
+		</id>
+		
+		<property name="role_name" column="role_name" />
+		<property name="role_memo" column="role_memo" />
+
+		<!-- 多对多关系映射 -->
+	<!-- 	set name:另外一方的集合的属性名称 table:多对多使用的中间表 inverse是否放弃维护
+		key column:当前对象在中间表的外键名称
+		many to many class:另一方类的路径  column:另一方在中间表中的外键键名称 -->
+		
+		<set name="users" table="sys_user_role" cascade="save-update" inverse="true" >
+			<key column="role_id"/>
+			<many-to-many class="domain.User" column="user_id" />
+		</set>	
+	
+	
+	</class>
+
+</hibernate-mapping>

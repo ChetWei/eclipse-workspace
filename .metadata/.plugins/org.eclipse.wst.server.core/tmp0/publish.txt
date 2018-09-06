@@ -1,0 +1,3 @@
+#Tomcat publish data
+#Sun Aug 26 22:41:01 CST 2018
+org.eclipse.jst.jee.server\:/binary\:G\:\\eclipse-jee-oxygen-3a-win32-x86_64\\eclipse-workspace\\SSH_CRM\\WebContent\\WEB-INF\\lib\\spring-web-4.3.9.RELEASE.jar=WEB-INF/lib/spring-web-4.3.9.RELEASE.jar

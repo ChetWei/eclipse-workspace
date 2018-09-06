@@ -1,0 +1,30 @@
+package daoImpl;
+
+import java.util.List;
+
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Projections;
+import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
+
+import dao.LinkManDao;
+import domain.LinkMan;
+
+public class LinkManImpl extends HibernateDaoSupport implements LinkManDao {
+
+	@Override
+	public Long findCount(DetachedCriteria detachedCriteria) {
+		detachedCriteria.setProjection(Projections.rowCount());
+		List<Long> list = (List<Long>) this.getHibernateTemplate().findByCriteria(detachedCriteria);
+		if(list.size() > 0) {
+			return (long) list.get(0).intValue();
+		}
+		return null;
+	}
+
+	@Override
+	public List<LinkMan> findByPage(DetachedCriteria detachedCriteria, Integer begin, Integer pageSize) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,15 @@
+package dao;
+
+import java.util.List;
+
+import org.hibernate.criterion.DetachedCriteria;
+
+import domain.LinkMan;
+
+public interface LinkManDao  {
+
+	Long findCount(DetachedCriteria detachedCriteria);
+
+	List<LinkMan> findByPage(DetachedCriteria detachedCriteria, Integer begin, Integer pageSize);
+
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<!-- 配置struts2常量 -->
+	<constant name="struts.action.extension" value="action"/>
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+	
+	<package name="demo1" namespace="/" extends="struts-default">
+		
+		<!-- 自定义拦截器 使用配置-->
+		<interceptors>
+		
+			<interceptor name="interceptorDemo1" class="interceptor.InterceptorDemo1" />
+			<interceptor name="interceptorDemo2" class="interceptor.InterceptorDemo2" />
+			
+			<!-- 方式二 定义拦截器栈 ,添加默认的拦截器-->
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="interceptorDemo1"/>
+				<interceptor-ref name="interceptorDemo2"/>
+			</interceptor-stack>
+			
+		</interceptors>
+		
+		<action name="actionDemo1" class="action.actionDemo1">
+		
+			<!-- 方式一 引入自定义拦截器(一旦引入，默认的拦截器就不执行了,所以需要添加进去) -->
+<!-- 		
+			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="interceptorDemo1"/>
+			<interceptor-ref name="interceptorDemo2"/> -->
+			 
+			<!-- 方式二 引入拦截器栈 -->
+			<interceptor-ref name="myStack" />
+		</action>
+		
+		
+		
+		
+	</package>
+	
+</struts>
+

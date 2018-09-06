@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+					    http://www.springframework.org/schema/beans/spring-beans.xsd
+					    http://www.springframework.org/schema/context 
+					    http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+	<!-- =======================Spring的IOC注解方式开发==================== -->
+	<!-- 配置组件扫描（那些包下的类使用IOC的注解） -->
+	<context:component-scan base-package="demo1"/>
+	<context:component-scan base-package="demo2"/>
+
+	<import resource="demo3/applicationContext03.xml"/>
+</beans>

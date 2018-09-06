@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<!-- 配置struts2常量 -->
+	<constant name="struts.action.extension" value="action"/>
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+	
+	<package name="demo1" namespace="/" extends="struts-default">
+		<action name="valueStackDemo1" class="valueStack.ValueStackDemo1"></action>
+		
+		<action name="valueStackDemo2" class="valueStack.ValueStackDemo2"></action>
+		
+		<action name="valueStackDemo3" class="valueStack.ValueStackDemo3">
+			<result name="saveValue">/index.jsp</result>
+		</action>
+		
+		<action name="valueStackDemo4" class="valueStack.ValueStackDemo4">
+			<result name="saveValue">/index.jsp</result>
+		</action>
+		
+		<action name="valueStackDemo5" class="valueStack.ValueStackDemo5">
+			<result name="demo5">/demo5.jsp</result>
+		</action>
+		
+	</package>
+	
+</struts>
+

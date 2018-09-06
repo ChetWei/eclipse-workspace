@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<!--配置一个包  name不重名即可  namespace:与action的name共同决定访问路径     extends:继承拦截器一般不改-->
+    <package name="customer" namespace="/" extends="struts-default">
+    	<!-- 配置自定义拦截器 -->
+    	<interceptors>
+    		<interceptor name="privilegeInterceptor" class="interceptor.PrivilegeInterceptor" />
+    	</interceptors>
+    	
+    	<global-results >
+    		<result name="login">/login.jsp</result>
+    	</global-results>
+    	
+        <!-- 通配符匹配方法访问 -->
+        <action name="customer_*" class="action.CustomerAction" method="{1}">
+        	<!-- 跳转到列表显示页面 -->
+        	<result name="findAll">/jsp/customer/list.jsp</result>
+        	<result name="enterAdd">/jsp/customer/add.jsp</result>
+        	<!--  redirectAction 重定向到另外一个Action   chain转发到另一个Action-->
+        	<result name="addSuccess" type="redirectAction">customer_findAll.action</result>
+
+        	<!-- 引入拦截器 -->
+        	<interceptor-ref name="privilegeInterceptor"/>
+        	<interceptor-ref name="defaultStack"/>
+        	 
+        </action>
+        
+        <action name="user_*" class="action.UserAction" method="{1}"> 
+        	<result name="success" type="redirect">/index.jsp</result>	
+        	<!-- 引入拦截器 -->
+       		 <interceptor-ref name="privilegeInterceptor">
+        		<param name="excludeMethods">login</param>  <!-- 不拦截登录 -->
+        	</interceptor-ref>
+        	
+        	<interceptor-ref name="defaultStack"/>
+        	
+        </action>
+        
+    </package>
+
+</struts>
+

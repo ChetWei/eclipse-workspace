@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <uri name="http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd" uri="file:///H:/dtd/hibernate-configuration-3.0.dtd"/>
+  <uri name="http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" uri="file:///H:/dtd/hibernate-mapping-3.0.dtd"/>
+  <uri name="http://struts.apache.org/dtds/struts-2.3.dtd" uri="file:///G:/网络资源学习记录/Java学习记录/06Struts2/day01/资料/dtd/struts-2.3.dtd"/>
+  <system systemId="http://www.springframework.org/schema/aop/spring-aop.xsd" uri="file:///G:/网络资源学习记录/Java学习记录/07Spring/day01/spring4.x/spring-framework-4.3.9.RELEASE/schema/aop/spring-aop-4.3.xsd"/>
+  <system systemId="http://www.springframework.org/schema/beans/spring-beans.xsd" uri="file:///G:/网络资源学习记录/Java学习记录/07Spring/day01/spring4.x/spring-framework-4.3.9.RELEASE/schema/beans/spring-beans-4.3.xsd"/>
+</catalog>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;daoImpl.LinkManImpl&apos; to &apos;LinkManDaoImpl&apos;&#x0D;&#x0A;- Original project: &apos;SSH_CRM&apos;&#x0D;&#x0A;- Original element: &apos;daoImpl.LinkManImpl&apos;&#x0D;&#x0A;- Renamed element: &apos;daoImpl.LinkManDaoImpl&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;LinkManImpl&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;daoImpl{LinkManImpl.java[LinkManImpl" matchStrategy="1" name="LinkManDaoImpl" qualified="false" references="true" similarDeclarations="false" stamp="1535117026789" textual="false" version="1.0"/>
+</session>

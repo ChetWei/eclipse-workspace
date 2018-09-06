@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<!-- 配置struts2常量 -->
+<!-- 	<constant name="struts.action.extension" value="action,,"/> --><!-- 修改拓展名action -->
+
+	<!--配置一个包  name不重名即可  namespace:与action的name共同决定访问路径     extends:继承拦截器一般不改-->
+    <package name="action01" namespace="/" extends="struts-default">
+        <!-- 全局结果跳转页面 -->
+        <global-results>  
+        	<result name="success" type="redirect">/success.jsp</result>  
+        </global-results>
+        
+    	<!-- 配置Action name:与url的strutsDemo1.action对应    class:处理的action的类-->
+     	<action name="requestDemo1" class="action01.RequestDemo1">
+	     	<!-- 配置页面跳转  name=  action return 的值-->
+        </action>
+        
+     	<action name="requestDemo2" class="action01.RequestDemo2">
+        </action>
+        
+     	<action name="requestDemo3" class="action01.RequestDemo3">
+        </action>
+        
+  
+    </package>
+
+</struts>
+

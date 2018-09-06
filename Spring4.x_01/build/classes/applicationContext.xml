@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Spring 入门的配置 -->
+	<bean id="userDao" class="demo1.UserDaoImpl">
+		<property name="name" value="李四"/> <!-- 使用DL依赖注入，将实现接口类中的属性注入进来，使得接口回调能直接访问 -->
+	</bean>
+	
+	<!-- Spring bean的生命周期的配置 -->
+	<bean id="customerDao" class="demo2.CustomerDaoImpl" init-method="setup" destroy-method="destroy">
+	</bean>
+	
+	
+	<!-- Spring bean的属性注入 -->
+		<!-- 构造方法的方式 -->
+		<bean id="car" class="demo3.Car">
+			<constructor-arg name="name" value="宝马"/>
+			<constructor-arg name="price" value="10000"/>
+		</bean>
+		
+		<!-- setter getter注入 -->
+		<bean id="phone" class="demo3.Phone">
+			<property name="name">
+				<value>三星</value>
+			</property>
+			<property name="size">
+				<value>2000</value>
+			</property>
+		</bean>
+		
+		<!-- setter方法注入对象类型的属性 -->
+		<bean id="employee" class="demo3.Employee">
+			<!-- value 设置普通类型的值，ref设置其他类的id或name -->
+			<property name="name" value="魏大大"/>
+			<property name="phone" ref="phone"/>
+		</bean>
+			
+		<!-- ==========使用p名称空间方式 类的写法与set get 相同   Spring2.5+============-->
+		<bean id="phone2" class="demo3.Phone" p:name="苹果" p:size="453434"></bean>
+		<bean id="employee2" class="demo3.Employee" p:name="魏小小" p:phone-ref="phone2"></bean>
+		
+		<!-- =================SpEL表达式属性注入 3.0+=============== -->
+		<bean id="book" class="demo4.Book">
+			<property name="name" value="#{'数学书'}"></property>
+			<property name="price" value="#{8888888}"></property>
+		</bean>
+		
+		<bean id="book2" class="demo4.Book">
+			<property name="name" value="#{'语文书'}"></property>
+			<property name="price" value="#{666888}"></property>
+			<property name="phone" value="#{phone}"></property>
+		</bean>
+		
+		<bean id="book3" class="demo4.Book">
+			<property name="name" value="#{'英语书'}"></property>
+			<property name="price" value="#{book.caculatePrice()}"></property><!-- 使用类中的方法 -->
+		</bean>
+		
+		<!-- =========分模块开发 ，在一个配置文件中引入多个配置文件=================-->
+		<import resource="demo5/applicationContext5.xml"/> 
+		
+		
+		
+</beans>

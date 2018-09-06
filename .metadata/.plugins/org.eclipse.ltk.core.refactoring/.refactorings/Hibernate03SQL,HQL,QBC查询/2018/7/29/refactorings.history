@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Customer.hbm.xml&apos; to &apos;ssh/src/domain&apos;&#x0D;&#x0A;- Original project: &apos;Hibernate03SQL,HQL,QBC查询&apos;&#x0D;&#x0A;- Destination element: &apos;ssh/src/domain&apos;&#x0D;&#x0A;- Original element: &apos;Customer.hbm.xml&apos;" description="Copy file" destination="=ssh/src&lt;domain" element1="src/domain/Customer.hbm.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1532075860764" units="0" version="1.0"/>
+</session>

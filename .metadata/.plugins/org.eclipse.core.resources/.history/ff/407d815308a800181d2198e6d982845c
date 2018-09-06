@@ -1,0 +1,86 @@
+package web.action;
+
+import org.hibernate.criterion.DetachedCriteria;
+
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.util.ValueStack;
+
+import domain.LinkMan;
+import domain.PageBean;
+import service.LinkManService;
+
+public class LinkManAction extends ActionSupport implements ModelDriven<LinkMan> {
+	//模型驱动使用对象
+	private LinkMan linkMan = new LinkMan();
+	@Override
+	public LinkMan getModel() {
+		return linkMan;
+	}
+	
+	//注入service
+	private LinkManService linkManService;
+	public void setLinkManService(LinkManService linkManService) {
+		this.linkManService = linkManService;
+	}
+	
+	//使用set方法接受当前页
+	private Integer currentPage = 1;
+	public void setCurrentPage(Integer currentPage) {
+		if(currentPage == null) {
+			currentPage = 1;
+		}
+		this.currentPage = currentPage;
+	}
+	//使用set方法接受每页的页数
+	private Integer pageSize = 3;
+	public void setPageSize(Integer pageSize) {
+		if(pageSize == null) {
+			pageSize = 3;
+		}
+		this.pageSize = pageSize;
+	}
+
+	
+	/***
+	 * 查询所有，分页查询
+	 * @return
+	 */
+	public String findAll() {
+		//离线条件查询
+		DetachedCriteria detachedCriteria = DetachedCriteria.forClass(LinkMan.class);
+		//设置条件
+		PageBean<LinkMan> pageBean = linkManService.finAll(detachedCriteria,currentPage,pageSize);
+		//保存到值栈
+		ValueStack valueStack = ActionContext.getContext().getValueStack();
+		valueStack.push(pageBean);
+		
+		return "findAll";
+	}
+	
+	/***
+	 * 进入编辑
+	 */
+	public String enterEdit() {
+		return "enterEdit";
+	}
+	
+	
+	/***
+	 * 删除联系人
+	 */
+	public String delete(LinkMan linkman) {
+		//根据id查询到联系人
+		linkman = linkManService.findById(linkMan.getLkm_id());
+		linkManService.delete(linkman);
+		return "deleteSuccess";
+	}
+	
+	
+	
+	
+	
+	
+	
+}

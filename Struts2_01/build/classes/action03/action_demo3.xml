@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<!-- 配置struts2常量 -->
+<!-- 	<constant name="struts.action.extension" value="action,,"/> --><!-- 修改拓展名action -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/><!-- 动态方法访问开启 -->
+	
+	<!--配置一个包  name不重名即可  namespace:与action的name共同决定访问路径     extends:继承拦截器一般不改-->
+    <package name="demo3" namespace="/" extends="struts-default">
+    
+    	<!-- 配置Action name:与url的strutsDemo1.action对应    class:处理的action的类-->
+     	<action name="userFind" class="action03.UserAction" method="find"></action>
+     	<action name="userUpdate" class="action03.UserAction" method="update"></action>
+     	<action name="userDelete" class="action03.UserAction" method="delete"></action>
+     	<action name="userSave" class="action03.UserAction" method="save"></action>
+        
+        <!-- 通配符匹配方法访问 -->
+        <action name="product_*" class="action03.ProductAction" method="{1}"></action>
+        
+        <!-- 动态方法访问方式 -->
+        <action name="customer" class="action03.Customer"></action>
+        
+    </package>
+
+</struts>
+

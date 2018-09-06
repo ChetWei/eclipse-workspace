@@ -1,0 +1,13 @@
+package serviceImpl;
+
+import dao.LinkManDao;
+import service.LinkManService;
+
+public class LinkManServiceImpl implements LinkManService {
+
+	private LinkManDao linkManDao;
+	public void setLinkManDao(LinkManDao linkManDao) {
+		this.linkManDao = linkManDao;
+	}
+	
+}

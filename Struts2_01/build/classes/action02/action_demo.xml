@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<!-- 配置struts2常量 -->
+<!-- 	<constant name="struts.action.extension" value="action,,"/> --><!-- 修改拓展名action -->
+
+	<!--配置一个包  name不重名即可  namespace:与action的name共同决定访问路径     extends:继承拦截器一般不改-->
+    <package name="demo1" namespace="/" extends="struts-default">
+    
+    	<!-- 配置Action name:与url的strutsDemo1.action对应    class:处理的action的类-->
+     	<action name="actionDemo1" class="action02.ActionDemo1">
+        </action>
+        
+        <action name="actionDemo2" class="action02.ActionDemo2">
+        </action>
+        
+        <action name="actionDemo3" class="action02.ActionDemo3">
+        </action>
+        
+    </package>
+
+</struts>
+

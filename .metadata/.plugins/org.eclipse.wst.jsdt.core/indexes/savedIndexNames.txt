@@ -1,0 +1,23 @@
+INDEX VERSION 1.4+G:\eclipse-jee-oxygen-3a-win32-x86_64\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+107393878.index
+874170273.index
+3600935989.index
+901607495.index
+3228812694.index
+600105817.index
+2949650576.index
+444733939.index
+3937432118.index
+3745134383.index
+2975038032.index
+4034623936.index
+2778202272.index
+3762505214.index
+1629421382.index
+828352243.index
+2604469660.index
+737247834.index
+361347757.index
+156309687.index
+4133326221.index
+2393627769.index

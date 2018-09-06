@@ -1,0 +1,7 @@
+package serviceImpl;
+
+import service.LinkManService;
+
+public class LinkManServiceImpl implements LinkManService {
+
+}
